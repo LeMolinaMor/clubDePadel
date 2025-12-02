@@ -1,0 +1,708 @@
+/* ===== VARIABLES Y RESET ===== */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #34495e;
+    --accent-color: #3498db;
+    --success-color: #27ae60;
+    --error-color: #e74c3c;
+    --warning-color: #f39c12;
+    --text-color: #2c3e50;
+    --text-light: #7f8c8d;
+    --bg-color: #ecf0f1;
+    --white: #ffffff;
+    --gray-light: #f8f9fa;
+    --gray-border: #dee2e6;
+    --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    --shadow-hover: 0 4px 20px rgba(0, 0, 0, 0.15);
+    --border-radius: 8px;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, var(--bg-color) 0%, #bdc3c7 100%);
+    color: var(--text-color);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===== HEADER ===== */
+.header {
+    background: var(--white);
+    box-shadow: var(--shadow);
+    padding: 1.5rem 0;
+    border-bottom: 3px solid var(--accent-color);
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.logo-section .logo {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.logo-section .slogan {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    font-style: italic;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+    font-size: 0.95rem;
+}
+
+.nav-link:hover {
+    background: var(--accent-color);
+    color: var(--white);
+}
+
+.nav-link.logout {
+    background: var(--error-color);
+    color: var(--white);
+}
+
+.nav-link.logout:hover {
+    background: #c0392b;
+}
+
+.user-welcome {
+    color: var(--text-light);
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+/* ===== CONTENIDO PRINCIPAL ===== */
+.simple-main {
+    flex: 1;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ===== SECCIONES MÁS ANCHAS ===== */
+.simple-section {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+    width: 100%;
+    max-width: 1200px;
+    border: 1px solid var(--gray-border);
+}
+
+.simple-section h2 {
+    color: var(--primary-color);
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    text-align: center;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--accent-color);
+}
+
+/* ===== FORMULARIOS LOGIN - CENTRADOS Y COMPACTOS ===== */
+.login-form-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.login-form {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-form .form-group {
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+
+.login-form label {
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+    display: block;
+    text-align: left;
+    width: 100%;
+}
+
+.login-form .form-control {
+    padding: 1rem 1.25rem;
+    border: 2px solid var(--gray-border);
+    border-radius: var(--border-radius);
+    font-size: 1.1rem;
+    transition: var(--transition);
+    background: var(--white);
+    width: 100%;
+}
+
+.login-form .form-control:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+/* ===== FORMULARIOS DASHBOARD - MÁS GRANDES Y ANCHOS ===== */
+.simple-form {
+    margin-bottom: 2rem;
+}
+
+.simple-form h3 {
+    color: var(--secondary-color);
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.dashboard-form {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.dashboard-form .form-row {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.dashboard-form .form-group {
+    display: flex;
+    flex-direction: column;
+    min-width: 220px;
+    flex: 1;
+}
+
+.dashboard-form label {
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 0.75rem;
+    font-size: 1.05rem;
+}
+
+.dashboard-form .form-control {
+    padding: 1rem 1.25rem;
+    border: 2px solid var(--gray-border);
+    border-radius: var(--border-radius);
+    font-size: 1.05rem;
+    transition: var(--transition);
+    background: var(--white);
+    width: 100%;
+}
+
+.dashboard-form .form-control:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+/* ===== BOTONES ===== */
+.btn {
+    background: var(--accent-color);
+    color: var(--white);
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: var(--border-radius);
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    text-align: center;
+    min-width: 160px;
+}
+
+.btn:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+}
+
+.btn-login {
+    width: 100%;
+    max-width: 400px;
+    margin: 1rem auto 0 auto;
+    display: block;
+    padding: 1.1rem 2rem;
+    font-size: 1.1rem;
+}
+
+/* ===== TABLAS MÁS COMPACTAS Y CON SCROLL ===== */
+.simple-table {
+    margin-top: 2rem;
+}
+
+.simple-table h3 {
+    color: var(--secondary-color);
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.table-container {
+    max-height: 400px;
+    overflow-y: auto;
+    overflow-x: auto;
+    border: 1px solid var(--gray-border);
+    border-radius: var(--border-radius);
+    background: var(--white);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+    min-width: 800px;
+}
+
+th, td {
+    padding: 0.5rem 0.6rem;
+    text-align: left;
+    border-bottom: 1px solid var(--gray-border);
+}
+
+th {
+    background: var(--primary-color);
+    color: var(--white);
+    font-weight: 600;
+    position: sticky;
+    top: 0;
+    font-size: 0.8rem;
+}
+
+tr:hover {
+    background: var(--gray-light);
+}
+
+/* Botones en tablas más compactos */
+table form {
+    display: flex;
+    gap: 0.3rem;
+    align-items: center;
+}
+
+table input[type="submit"] {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.75rem;
+    min-width: auto;
+    border-radius: 4px;
+}
+
+table .btn {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+    min-width: auto;
+}
+
+/* ===== MENSAJES FLASH ===== */
+.flash-message {
+    display: flex;
+    align-items: center;
+    padding: 1.25rem 1.5rem;
+    border-radius: var(--border-radius);
+    margin-bottom: 2rem;
+    max-width: 800px;
+    width: 100%;
+    box-shadow: var(--shadow);
+}
+
+.flash-message.success {
+    background: var(--success-color);
+    color: var(--white);
+    border-left: 4px solid #1e8449;
+}
+
+.flash-message.error {
+    background: var(--error-color);
+    color: var(--white);
+    border-left: 4px solid #c0392b;
+}
+
+.flash-icon {
+    font-size: 1.2rem;
+    margin-right: 1rem;
+    font-weight: bold;
+}
+
+.flash-text {
+    flex: 1;
+    font-weight: 500;
+}
+
+/* ===== FOOTER ===== */
+.footer-premium {
+    background: var(--primary-color);
+    color: var(--white);
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: auto;
+    border-top: 3px solid var(--accent-color);
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+}
+
+.footer-text {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.footer-heart {
+    display: inline-block;
+    animation: heartbeat 1.5s ease-in-out infinite both;
+}
+
+@keyframes heartbeat {
+    from {
+        transform: scale(1);
+    }
+    10% {
+        transform: scale(0.95);
+    }
+    17% {
+        transform: scale(0.98);
+    }
+    33% {
+        transform: scale(0.9);
+    }
+    45% {
+        transform: scale(1);
+    }
+}
+
+.footer-email {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.75rem 1.5rem;
+    border: 2px solid var(--accent-color);
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+    font-size: 0.95rem;
+}
+
+.footer-email:hover {
+    background: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+.footer-copyright {
+    font-size: 0.9rem;
+    color: #bdc3c7;
+}
+
+/* ===== FORMULARIO MODIFICAR RESERVA - MEJORADO ===== */
+.modificar-container {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding: 3rem;
+    width: 100%;
+    max-width: 600px;
+    margin: 2rem auto;
+    border: 1px solid var(--gray-border);
+}
+
+.modificar-container h1 {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 2.5rem;
+    text-align: center;
+    padding-bottom: 1rem;
+    border-bottom: 3px solid var(--accent-color);
+}
+
+/* Contenedor del formulario de modificación */
+.modificar-form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Grupos de formulario mejorados */
+.modificar-form .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0;
+}
+
+.modificar-form label {
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 0.75rem;
+    font-size: 1.1rem;
+    display: block;
+}
+
+.modificar-form .form-control {
+    padding: 1.1rem 1.5rem;
+    border: 2px solid var(--gray-border);
+    border-radius: var(--border-radius);
+    font-size: 1.1rem;
+    transition: var(--transition);
+    background: var(--white);
+    width: 100%;
+    font-family: inherit;
+}
+
+.modificar-form .form-control:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.15);
+    transform: translateY(-1px);
+}
+
+/* Contenedor de acciones del formulario mejorado */
+.form-actions {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-top: 2.5rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+/* Botones mejorados y armonizados */
+.btn-modify {
+    background: var(--accent-color);
+    color: var(--white);
+    border: none;
+    padding: 1.2rem 2.5rem;
+    border-radius: var(--border-radius);
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    text-align: center;
+    min-width: 200px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-modify:hover {
+    background: #2980b9;
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
+}
+
+.btn-secondary {
+    background: var(--text-light);
+    color: var(--white);
+    text-decoration: none;
+    padding: 1.2rem 2.5rem;
+    border-radius: var(--border-radius);
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: var(--transition);
+    text-align: center;
+    min-width: 200px;
+    display: inline-block;
+    border: 2px solid transparent;
+}
+
+.btn-secondary:hover {
+    background: #6c757d;
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
+    color: var(--white);
+    text-decoration: none;
+}
+
+/* Mensajes de error integrados con el sistema existente */
+.modificar-flash-message {
+    display: flex;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    border-radius: var(--border-radius);
+    margin-bottom: 2.5rem;
+    width: 100%;
+    box-shadow: var(--shadow);
+    border-left: 5px solid #c0392b;
+}
+
+.modificar-flash-message.error {
+    background: var(--error-color);
+    color: var(--white);
+}
+
+.modificar-flash-icon {
+    font-size: 1.4rem;
+    margin-right: 1.2rem;
+    font-weight: bold;
+}
+
+.modificar-flash-text {
+    flex: 1;
+    font-weight: 500;
+    font-size: 1.05rem;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1200px) {
+    .simple-section {
+        max-width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .simple-main {
+        padding: 1rem;
+    }
+
+    .simple-section {
+        padding: 1.5rem;
+        max-width: 100%;
+    }
+
+    .dashboard-form .form-row {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .dashboard-form .form-group {
+        min-width: 100%;
+    }
+
+    .btn-login {
+        width: 100%;
+    }
+
+    .footer-content {
+        padding: 0 1rem;
+    }
+
+    table {
+        min-width: 600px;
+        font-size: 0.8rem;
+    }
+
+    th, td {
+        padding: 0.4rem 0.5rem;
+    }
+
+    /* Responsive para modificar reservas mejorado */
+    .modificar-container {
+        padding: 2rem 1.5rem;
+        margin: 1rem;
+        max-width: calc(100% - 2rem);
+    }
+    
+    .modificar-container h1 {
+        font-size: 1.6rem;
+        margin-bottom: 2rem;
+    }
+    
+    .form-actions {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+    }
+    
+    .btn-modify,
+    .btn-secondary {
+        min-width: 100%;
+        max-width: none;
+        padding: 1.1rem 2rem;
+    }
+    
+    .modificar-form .form-control {
+        padding: 1rem 1.25rem;
+        font-size: 1rem;
+    }
+
+    .modificar-form {
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .modificar-container {
+        padding: 1.5rem 1rem;
+    }
+    
+    .modificar-container h1 {
+        font-size: 1.4rem;
+    }
+    
+    .btn-modify,
+    .btn-secondary {
+        padding: 1rem 1.5rem;
+        font-size: 1rem;
+    }
+}
+
+/* ===== UTILIDADES ===== */
+.text-center {
+    text-align: center;
+}
+
+.mb-1 { margin-bottom: 1rem; }
+.mb-2 { margin-bottom: 2rem; }
+.mt-1 { margin-top: 1rem; }
+.mt-2 { margin-top: 2rem; }
+
+.hidden {
+    display: none;
+}
